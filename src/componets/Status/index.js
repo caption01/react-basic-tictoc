@@ -1,14 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import { DEAD_WINNER } from '../utils/helpers';
+import { DEAD_WINNER } from '../../utils/helpers';
 
-const StyleStatus = styled.div`
-  font-size: 1.5em;
-  margin: 1.5em auto;
-  text-align: center;
-  font-weight: bold;
-`;
+import './Status.scss';
 
 const calculateStatus = (playerWin, turn) => {
   if (playerWin === DEAD_WINNER) return playerWin;
@@ -23,7 +17,7 @@ function Status(props) {
 
   const status = calculateStatus(player, turn);
 
-  return <StyleStatus>{status}</StyleStatus>;
+  return <div className="status">{status}</div>;
 }
 
 export default Status;

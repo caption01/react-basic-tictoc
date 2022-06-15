@@ -1,8 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
-import logo from './../assets/logo.svg';
-
-const StyledHeader = styled.header`
+.header {
   background-color: #282c34;
   display: flex;
   flex-direction: row;
@@ -11,17 +7,19 @@ const StyledHeader = styled.header`
   box-shadow: 0 0 10px 1px;
   height: 50px;
   padding: 10px;
-  .header-logo {
+
+  &__logo {
     height: 50px;
     width: 50px;
   }
-  .header-title {
+  &__title {
     color: white;
     font-size: 1.1em;
     margin: 0;
   }
+
   @media (prefers-reduced-motion: no-preference) {
-    .header-logo {
+    &__logo {
       animation: header-logo-spin infinite 20s linear;
     }
   }
@@ -33,15 +31,4 @@ const StyledHeader = styled.header`
       transform: rotate(360deg);
     }
   }
-`;
-
-function Header() {
-  return (
-    <StyledHeader>
-      <img src={logo} className="header-logo" alt="logo" />
-      <h1 className="header-title">React Tic Tac Toe challenge</h1>
-    </StyledHeader>
-  );
 }
-
-export default Header;

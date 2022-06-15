@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import Header from './componets/header';
-import Board from './componets/board';
-import Status from './componets/status';
-import History from './componets/history';
+import Header from './componets/Header';
+import Board from './componets/Board';
+import Status from './componets/Status';
+import History from './componets/History';
 
 import { calculateWinner, DEAD_WINNER } from './utils/helpers';
 

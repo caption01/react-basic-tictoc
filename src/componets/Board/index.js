@@ -1,13 +1,8 @@
 import React from 'react';
-import Square from './square';
-import styled from 'styled-components';
 
-const StyledBoard = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto;
-  margin: 0 auto;
-  width: 144px;
-`;
+import Square from '../Square';
+
+import './Board.scss';
 
 function Board(props) {
   const { history, step, winnerLine = false, onClick } = props;
@@ -32,7 +27,7 @@ function Board(props) {
     );
   });
 
-  return <StyledBoard>{renderSquares}</StyledBoard>;
+  return <div className="board">{renderSquares}</div>;
 }
 
 export default Board;
