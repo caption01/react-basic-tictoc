@@ -8,8 +8,9 @@ import './Header.scss';
 // adding logo image as final design
 function Header() {
   return (
-    <header>
-      <h1>React Tic Tac Toe challenge</h1>
+    <header className="header">
+      <img className="header__logo" src={logo} alt="logo" />
+      <h1 className="header__title">React Tic Tac Toe challenge</h1>
     </header>
   );
 }

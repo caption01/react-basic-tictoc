@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './componets/Header';
 import Board from './componets/Board';
@@ -31,12 +31,13 @@ function App() {
   // calculate winner
   // calculate next app state
   useEffect(() => {}, []);
+
   return (
     <>
       <Header />
-      <Status player={status?.winner?.player} turn={status.turn} />
+      {/* <Status player={status?.winner?.player} turn={status.turn} />
       <Board history={gameHistory} step={0} />
-      <History history={gameHistory} />
+      <History history={gameHistory} /> */}
     </>
   );
 }
