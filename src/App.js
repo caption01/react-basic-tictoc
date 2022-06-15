@@ -31,6 +31,7 @@ function App() {
   // calculate winner
   // calculate next app state
   useEffect(() => {}, []);
+
   return (
     <>
       <Header />
