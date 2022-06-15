@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { DEAD_WINNER } from '../helpers';
+import { DEAD_WINNER } from '../utils/helpers';
 
 const StyleStatus = styled.div`
   font-size: 1.5em;

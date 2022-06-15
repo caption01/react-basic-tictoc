@@ -5,7 +5,7 @@ import Board from './componets/board';
 import Status from './componets/status';
 import History from './componets/history';
 
-import { calculateWinner, DEAD_WINNER } from './helpers';
+import { calculateWinner, DEAD_WINNER } from './utils/helpers';
 
 const initialBoard = Array(9).fill(null);
 const initialStatus = {
