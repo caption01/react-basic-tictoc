@@ -5,29 +5,21 @@ import './History.scss';
 const getRow = (history, move) =>
   Math.floor(history[move].squareSelected / 3) + 1;
 
-const getCol = (history, move) => (history[move].squareSelected % 3) + 1;
+// hint create helper to calculate Col
+// const getCol = () => {}
 
-function History(props) {
-  const { history, step, onClick } = props;
-
+// implenent history button to backforward game depent on user choose
+// apply className in History.scss
+// add action onClick into each history button
+function History({ history }) {
   const moves = history.map((i, move) => {
     const moveRow = getRow(history, move);
     const moveCol = getCol(history, move);
 
-    const desc = move
-      ? 'Go to move #' + move + ' (Row: ' + moveRow + ', Col: ' + moveCol + ')'
-      : 'Go to game start';
+    // using moveRow and moveCol to create description
+    const desc = 'move history';
 
-    return (
-      <li key={move}>
-        <button
-          className={step === move ? 'active' : ''}
-          onClick={() => onClick(move)}
-        >
-          {desc}
-        </button>
-      </li>
-    );
+    return <li key={move}>{desc}</li>;
   });
 
   return (

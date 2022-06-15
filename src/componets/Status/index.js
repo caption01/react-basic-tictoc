@@ -4,20 +4,14 @@ import { DEAD_WINNER } from '../../utils/helpers';
 
 import './Status.scss';
 
-const calculateStatus = (playerWin, turn) => {
-  if (playerWin === DEAD_WINNER) return playerWin;
+// implement calculateStatus to calculate status to display
+const calculateStatus = (playerWin, turn) => {};
 
-  if (playerWin) return `Winner: ${playerWin}`;
-
-  return `Next player: ${turn}`;
-};
-
+// implement stauts using Status.scss
 function Status(props) {
-  const { player, turn } = props;
-
   const status = calculateStatus(player, turn);
 
-  return <div className="status">{status}</div>;
+  return <div className="status">My Turn</div>;
 }
 
 export default Status;

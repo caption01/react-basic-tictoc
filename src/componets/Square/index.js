@@ -3,18 +3,10 @@ import clx from 'classnames';
 
 import './Square.scss';
 
-function Square({ win, onClick, value }) {
-  let squareClass = ['square__button'];
-
-  if (win) {
-    squareClass.push('square__button--win');
-  }
-
-  return (
-    <button className={clx(squareClass)} onClick={onClick}>
-      {value}
-    </button>
-  );
+// implement square using Square.scss and using win props to add className win
+// into classname
+function Square({ value }) {
+  return <button className="square__button">{value}</button>;
 }
 
 export default Square;
