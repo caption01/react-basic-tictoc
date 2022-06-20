@@ -5,14 +5,24 @@ import Square from '../Square';
 import './Board.scss';
 
 function Board(props) {
-  const { history, step, onClick } = props;
+  const { history, step, winnerLine = [], onClick } = props;
 
   const renderSquares = history[step].squaresList.map((value, squareIdx) => {
+    let isWin = false;
+
+    for (let w = 0; w < winnerLine.length; w++) {
+      const winIdx = winnerLine[w];
+      if (winnerLine && winIdx === squareIdx) {
+        isWin = true;
+      }
+    }
+
     return (
       <Square
         key={squareIdx}
         value={value}
         onClick={() => onClick(squareIdx)}
+        win={isWin}
       />
     );
   });

@@ -74,7 +74,12 @@ function App() {
     <>
       <Header />
       <Status player={status?.winner?.player} turn={status.turn} />
-      <Board history={gameHistory} step={step} onClick={onBoardClick} />
+      <Board
+        history={gameHistory}
+        step={step}
+        winnerLine={status?.winner?.line}
+        onClick={onBoardClick}
+      />
       <History history={gameHistory} step={step} onClick={onStepClick} />
     </>
   );
