@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './componets/Header';
 import Board from './componets/Board';
 import Status from './componets/Status';
-// import History from './componets/History';
+import History from './componets/History';
 
 import { calculateWinner, DEAD_WINNER } from './utils/helpers';
 
@@ -15,7 +15,7 @@ const initialStatus = {
 
 function App() {
   const [status, setStatus] = useState(initialStatus);
-  const [nextPlay, setNextPlay] = useState(true);
+  const [nextPlay, setIsNextPlay] = useState(true);
   const [step, setStep] = useState(0);
   const [gameHistory, setGameHistory] = useState([
     {
@@ -43,7 +43,13 @@ function App() {
       }),
     );
     setStep(history.length);
-    setNextPlay(!nextPlay);
+    setIsNextPlay(!nextPlay);
+  }
+
+  function onStepClick(step) {
+    setGameHistory(gameHistory.slice(0, step + 1));
+    setStep(step);
+    setIsNextPlay(step % 2 === 0);
   }
 
   useEffect(() => {
@@ -69,7 +75,7 @@ function App() {
       <Header />
       <Status player={status?.winner?.player} turn={status.turn} />
       <Board history={gameHistory} step={step} onClick={onBoardClick} />
-      {/* <History history={gameHistory} /> */}
+      <History history={gameHistory} step={step} onClick={onStepClick} />
     </>
   );
 }
