@@ -6,8 +6,8 @@
 
 - [] Build UI -> feature/develop
   - [x] Header -> feature/develop-01
-  - [] Board
-  - [] Sqaure
+  - [x] Board
+  - [x] Sqaure
   - [] Status
   - [] History
 - [] Add Feature
