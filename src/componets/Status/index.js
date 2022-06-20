@@ -12,11 +12,8 @@ const calculateStatus = (playerWin, turn) => {
   return `Next player: ${turn}`;
 };
 
-function Status(props) {
-  const { player, turn } = props;
-
+function Status({ player, turn }) {
   const status = calculateStatus(player, turn);
-
   return <div className="status">{status}</div>;
 }
 

@@ -7,9 +7,7 @@ const getRow = (history, move) =>
 
 const getCol = (history, move) => (history[move].squareSelected % 3) + 1;
 
-function History(props) {
-  const { history, step, onClick } = props;
-
+function History({ history, step, onClick }) {
   const moves = history.map((i, move) => {
     const moveRow = getRow(history, move);
     const moveCol = getCol(history, move);

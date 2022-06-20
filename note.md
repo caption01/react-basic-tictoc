@@ -4,13 +4,13 @@
 
 ### todos
 
-- [] Build UI
-  - [] Header
-  - [] Board
-  - [] Sqaure
-  - [] Status
-  - [] History
-- [] Add Feature
-  - [] Play X/O
-  - [] Save & Apply History
-  - [] Restart
+- [x] Build UI -> feature/develop
+  - [x] Header -> feature/develop-01
+  - [x] Board
+  - [x] Sqaure
+  - [x] Status
+  - [x] History
+- [x] Add Feature
+  - [x] Play X/O
+  - [x] Save & Apply History
+  - [x] Restart

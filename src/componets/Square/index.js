@@ -3,7 +3,7 @@ import clx from 'classnames';
 
 import './Square.scss';
 
-function Square({ win, onClick, value }) {
+function Square({ value, win, onClick }) {
   let squareClass = ['square__button'];
 
   if (win) {

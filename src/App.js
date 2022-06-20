@@ -14,8 +14,8 @@ const initialStatus = {
 };
 
 function App() {
-  const [nextPlay, setIsNextPlay] = useState(true);
   const [status, setStatus] = useState(initialStatus);
+  const [nextPlay, setIsNextPlay] = useState(true);
   const [step, setStep] = useState(0);
   const [gameHistory, setGameHistory] = useState([
     {
@@ -40,7 +40,7 @@ function App() {
       history.concat({
         squaresList: squares,
         squareSelected: i,
-      })
+      }),
     );
     setStep(history.length);
     setIsNextPlay(!nextPlay);

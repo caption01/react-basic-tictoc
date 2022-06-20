@@ -5,7 +5,7 @@ import Square from '../Square';
 import './Board.scss';
 
 function Board(props) {
-  const { history, step, winnerLine = false, onClick } = props;
+  const { history, step, winnerLine = [], onClick } = props;
 
   const renderSquares = history[step].squaresList.map((value, squareIdx) => {
     let isWin = false;
@@ -21,8 +21,8 @@ function Board(props) {
       <Square
         key={squareIdx}
         value={value}
-        win={isWin}
         onClick={() => onClick(squareIdx)}
+        win={isWin}
       />
     );
   });
