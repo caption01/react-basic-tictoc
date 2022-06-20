@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import Header from './componets/Header';
 import Board from './componets/Board';
-// import Status from './componets/Status';
+import Status from './componets/Status';
 // import History from './componets/History';
+
+import { calculateWinner, DEAD_WINNER } from './utils/helpers';
 
 const initialBoard = Array(9).fill(null);
 const initialStatus = {
@@ -22,12 +24,10 @@ function App() {
     },
   ]);
 
-  // todo implement onClick when user click on board
-  // this function should
-  // 1. save game history
-  // 2. update game step
   function onBoardClick(i) {
     const selectedSquare = gameHistory[step].squaresList[i];
+
+    if (status.winner || selectedSquare) return;
 
     const history = gameHistory.slice(0, step + 1);
     const current = history[history.length - 1];
@@ -46,16 +46,28 @@ function App() {
     setNextPlay(!nextPlay);
   }
 
-  // todo implement sideEffect when app state change
-  // this function should
-  // calculate winner
-  // calculate next app state
-  // useEffect(() => {}, []);
+  useEffect(() => {
+    const current = gameHistory[step];
+    const winner = calculateWinner(current.squaresList);
+
+    if (winner) {
+      setStatus({ winner });
+      return;
+    }
+
+    if (step > 8) {
+      const deadWinner = { player: DEAD_WINNER };
+      setStatus({ winner: deadWinner });
+      return;
+    }
+
+    setStatus({ turn: nextPlay ? 'X' : 'O' });
+  }, [gameHistory, step, nextPlay]);
 
   return (
     <>
       <Header />
-      {/* <Status player={status?.winner?.player} turn={status.turn} /> */}
+      <Status player={status?.winner?.player} turn={status.turn} />
       <Board history={gameHistory} step={step} onClick={onBoardClick} />
       {/* <History history={gameHistory} /> */}
     </>

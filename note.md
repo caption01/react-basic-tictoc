@@ -8,9 +8,9 @@
   - [x] Header -> feature/develop-01
   - [x] Board
   - [x] Sqaure
-  - [] Status
+  - [x] Status
   - [] History
 - [] Add Feature
-  - [] Play X/O
+  - [x] Play X/O
   - [] Save & Apply History
   - [] Restart
