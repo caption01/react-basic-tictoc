@@ -3,9 +3,15 @@ import clx from 'classnames';
 
 import './Square.scss';
 
-function Square({ value, onClick }) {
+function Square({ value, win, onClick }) {
+  let squareClass = ['square__button'];
+
+  if (win) {
+    squareClass.push('square__button--win');
+  }
+
   return (
-    <button className="square__button" onClick={onClick}>
+    <button className={clx(squareClass)} onClick={onClick}>
       {value}
     </button>
   );
