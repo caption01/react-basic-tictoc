@@ -4,8 +4,8 @@
 
 ### todos
 
-- [x] Build UI -> feature/develop
-  - [x] Header -> feature/develop-01
+- [x] Build UI
+  - [x] Header
   - [x] Board
   - [x] Sqaure
   - [x] Status
